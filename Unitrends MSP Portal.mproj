@@ -11,15 +11,16 @@
     <AllowNativeQuery>False</AllowNativeQuery>
     <AsAction>False</AsAction>
     <FastCombine>False</FastCombine>
-    <ClearLog>False</ClearLog>
+    <ClearLog>True</ClearLog>
     <ShowEngineTraces>False</ShowEngineTraces>
-    <ShowUserTraces>False</ShowUserTraces>
+    <ShowUserTraces>True</ShowUserTraces>
     <LegacyRedirects>False</LegacyRedirects>
     <SuppressRowErrors>False</SuppressRowErrors>
     <SuppressCellErrors>False</SuppressCellErrors>
     <MaxRows>1000</MaxRows>
     <ExtensionProject>Yes</ExtensionProject>
     <Name>Unitrends MSP Portal</Name>
+    <ThrowOnFoldingFailure>False</ThrowOnFoldingFailure>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>false</DebugSymbols>
@@ -43,30 +44,48 @@
     <Compile Include="resources.resx">
       <SubType>Code</SubType>
     </Compile>
-    <Content Include="unitrends-16.png">
+    <Compile Include="Diagnostics.pqm">
       <SubType>Content</SubType>
-    </Content>
-    <Content Include="unitrends-20.png">
+    </Compile>
+    <Compile Include="Table.ChangeType.pqm">
       <SubType>Content</SubType>
-    </Content>
-    <Content Include="unitrends-24.png">
+    </Compile>
+    <Compile Include="Table.GenerateByPage.pqm">
       <SubType>Content</SubType>
-    </Content>
-    <Content Include="unitrends-32.png">
+    </Compile>
+    <Compile Include="Table.ToNavigationTable.pqm">
       <SubType>Content</SubType>
-    </Content>
-    <Content Include="unitrends-40.png">
+    </Compile>
+    <Compile Include="unitrends-16.png">
       <SubType>Content</SubType>
-    </Content>
-    <Content Include="unitrends-48.png">
+    </Compile>
+    <Compile Include="unitrends-20.png">
       <SubType>Content</SubType>
-    </Content>
-    <Content Include="unitrends-64.png">
+    </Compile>
+    <Compile Include="unitrends-24.png">
       <SubType>Content</SubType>
-    </Content>
-    <Content Include="Unitrends_MSP_Portal.query.pq">
+    </Compile>
+    <Compile Include="unitrends-32.png">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="unitrends-40.png">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="unitrends-48.png">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="unitrends-64.png">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="Endpoints.pqm">
+      <SubType>Content</SubType>
+    </Compile>
+    <Compile Include="Unitrends_MSP_Portal.query.pq">
       <SubType>Code</SubType>
-    </Content>
+    </Compile>
+    <Compile Include="Schema.pqm">
+      <SubType>Content</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <UsingTask TaskName="BuildExtension" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v12.0.dll">

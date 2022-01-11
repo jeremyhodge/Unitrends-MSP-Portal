@@ -1,0 +1,12 @@
+﻿let
+    Endpoints = #table(
+        { "Name",              "Endpoint",                         "Schema",            "Params",       "AllowPaging" }, {
+        { "Agent",             "/v1/agents/latest",                "Agent",             "",             "false" },
+        { "Customers",         "/v1/customers",                    "Customers",         "",             "true" },
+        { "Appliances",        "/v1/appliances",                   "Appliances",        "",             "true" },
+        { "Assets",            "/v1/assets",                       "Assets",            "",             "true" },
+        { "Backups",           "/v1/backups",                      "Backups",           "",             "true" },
+        { "BackupIQ Alerts",   "/v1/backupiq/alerts",              "BackupIQAlerts",    "type=alert",   "true" }
+    })
+in
+    Endpoints

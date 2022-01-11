@@ -1,0 +1,67 @@
+﻿let
+
+    Unitrends.Schemas.Agent = type table [
+        version = text,
+        downloadLocation = text,
+        checksum = text,
+        checksumAlgorithm = text            
+    ],
+
+    Unitrends.Schemas.Customers = type table [
+        id = text,
+        name = text
+    ],
+
+    Unitrends.Schemas.Appliances = type table [
+        customer_id = text,
+        asset_tag = text,
+        name = text,
+        is_online = logical,
+        total_mb_size = number,
+        total_mb_free = number,
+        version = text,
+        helix_status = text
+    ],
+
+    Unitrends.Schemas.Assets = type table [
+        customer_id = text,
+        asset_tag = text,
+        name = text,
+        type = text,
+        key = text
+    ],
+
+    Unitrends.Schemas.Backups = type table [
+        customer_id = text,
+        asset_tag = text,
+        start_time = datetime,
+        complete_time = datetime,
+        size = number,
+        type = text,
+        status = text,
+        replication_status = text,
+        asset_key = text
+    ],
+
+    Unitrends.Schemas.BackupIQ.Alerts = type table [
+        type = text,
+        appliance_name = text,
+        asset_tag = text,
+        customer_id = text,
+        customer_name = text,
+        message = text,
+        severity = text,
+        created_time = datetime,
+        is_dismissed = logical
+    ],
+
+    Schema = #table({"Entity", "Type"}, {
+        { "Agent",          Unitrends.Schemas.Agent },
+        { "Appliances",     Unitrends.Schemas.Appliances },
+        { "Assets",         Unitrends.Schemas.Assets },
+        { "Backups",        Unitrends.Schemas.Backups },
+        { "BackupIQAlerts", Unitrends.Schemas.BackupIQ.Alerts },
+        { "Customers",      Unitrends.Schemas.Customers }
+    })
+in
+    Schema
